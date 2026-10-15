@@ -169,8 +169,8 @@ button.btn { font-family: inherit; cursor: pointer; }
 
 /* Member portal (placeholder) */
 .portal { min-height: 100svh; display: flex; flex-direction: column; }
-.portal-main { flex: 1; display: flex; align-items: center; padding: 120px 0 72px; }
-.portal-inner { max-width: 640px; }
+.portal-main { flex: 1 0 auto; display: flex; flex-direction: column; padding: 120px 0 72px; }
+.portal-inner { max-width: 640px; margin-block: auto; }
 .portal-list { list-style: none; padding: 0; margin: 0 0 2rem; display: grid; gap: .6rem; }
 .portal-list li { display: flex; align-items: center; gap: .7rem; font-weight: 600; }
 .portal-list li::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--gold); flex: none; }

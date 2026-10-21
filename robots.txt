@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://olympusathletics.fit/sitemap.xml

@@ -112,6 +112,23 @@ button.btn { font-family: inherit; cursor: pointer; }
 .section-dark { background: var(--bg-2); border-block: 1px solid var(--line); }
 .section-sub { color: var(--muted); margin: -.5rem 0 2.5rem; }
 
+/* Event banner (temporary) */
+.event { background: radial-gradient(ellipse at 15% 50%, rgba(217,166,58,.16), transparent 60%), var(--bg-2); border-bottom: 1px solid var(--line); }
+.event[hidden] { display: none; }
+.event-inner { display: flex; align-items: center; gap: clamp(1.25rem, 4vw, 2.5rem); padding: clamp(2rem, 5vw, 3rem) 0; }
+.event-date {
+  flex: none; width: 96px; text-align: center; border: 2px solid var(--gold); border-radius: var(--radius);
+  padding: .6rem 0; display: flex; flex-direction: column; line-height: 1.1;
+}
+.event-date span { font-weight: 700; font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.event-date b { font-family: var(--display); font-weight: 400; font-size: 2.8rem; line-height: 1; margin: .15rem 0; }
+.event-body { flex: 1; }
+.event-body h2 { margin-bottom: .3rem; }
+.event-body h2 small { font-family: var(--body); font-weight: 600; font-size: .4em; text-transform: none; letter-spacing: 0; color: var(--muted); vertical-align: middle; }
+.event-body .eyebrow { margin-bottom: .5rem; }
+.event-when { font-weight: 700; color: var(--gold-2); margin: 0 0 .4rem; }
+.event-body p:last-child { color: var(--muted); margin: 0; }
+
 /* Program cards */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
 .card {
@@ -123,6 +140,27 @@ button.btn { font-family: inherit; cursor: pointer; }
 .card-num { font-family: var(--display); font-size: 2.6rem; color: transparent; -webkit-text-stroke: 1.5px var(--gold); line-height: 1; margin-bottom: 1.2rem; }
 .card p { color: var(--muted); margin: 0; }
 .card .card-meta { color: var(--gold); font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; margin: -.4rem 0 .6rem; }
+
+/* Schedule */
+.schedule-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.schedule-group {
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+}
+.schedule-group h3 { margin-bottom: 1.4rem; }
+.schedule-group .card-meta { color: var(--gold); font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; margin: -.9rem 0 1.2rem; }
+.schedule-list { margin: 0; }
+.schedule-list > div {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+  padding: 1rem 0; border-top: 1px solid var(--line);
+}
+.schedule-list dt { font-weight: 600; color: #dcdad5; }
+.schedule-list dd { margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.schedule-list dd span {
+  font-weight: 700; font-size: .9rem; white-space: nowrap;
+  padding: .35rem .8rem; border-radius: 999px;
+  border: 1px solid rgba(217,166,58,.5); color: var(--gold-2); background: rgba(217,166,58,.08);
+}
 
 /* Pricing */
 .price-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; align-items: stretch; }
@@ -195,7 +233,7 @@ button.btn { font-family: inherit; cursor: pointer; }
   .hero-crest { position: relative; align-self: flex-start; right: auto; bottom: auto; width: min(220px, 50vw); margin: 100px 0 -110px max(16px, calc((100% - 1160px) / 2)); }
 }
 @media (max-width: 900px) {
-  .cards, .price-groups { grid-template-columns: 1fr; }
+  .cards, .price-groups, .schedule-groups { grid-template-columns: 1fr; }
   .price-groups { gap: 1.75rem; }
   .facility, .cta-inner { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
@@ -216,6 +254,9 @@ button.btn { font-family: inherit; cursor: pointer; }
   .strip-inner div + div { border-left: 0; border-top: 1px solid rgba(0,0,0,.18); }
   .strip-inner div { padding: .9rem; }
   .equip { grid-template-columns: 1fr; }
+  .event-inner { flex-direction: column; align-items: flex-start; }
+  .event-date { flex-direction: row; width: auto; gap: .6rem; align-items: baseline; padding: .4rem 1rem; }
+  .event-date b { font-size: 1.6rem; }
   .hero-content { padding-bottom: 60px; }
   .brand-mark { height: 42px; }
 }

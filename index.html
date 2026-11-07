@@ -57,6 +57,7 @@
     <nav id="nav-links" class="nav-links">
       <a href="#programs">Programs</a>
       <a href="#pricing">Pricing</a>
+      <a href="#schedule">Schedule</a>
       <a href="#facility">Facility</a>
       <a href="#contact" class="btn btn-sm">Get Started</a>
       <a href="portal.html" class="btn btn-sm btn-ghost">Member Portal</a>
@@ -88,6 +89,20 @@
       <div><strong>Open Gym</strong><span>$50/mo</span></div>
       <div><strong>Athlete Training</strong><span>Ages 7–18</span></div>
       <div><strong>Adult Classes</strong><span>Unlimited $150/mo</span></div>
+    </div>
+  </section>
+
+  <!-- Squatober event: auto-hides after it ends (see script at bottom). Remove after Nov 7, 2026. -->
+  <section id="event" class="event" aria-label="Upcoming event" hidden>
+    <div class="wrap event-inner">
+      <div class="event-date" aria-hidden="true"><span>Nov</span><b>7</b><span>Sat</span></div>
+      <div class="event-body">
+        <p class="eyebrow">Special Event · This Saturday</p>
+        <h2>Squatober <small>(in November)</small></h2>
+        <p class="event-when">Saturday, November 7 · 10 AM – 2 PM</p>
+        <p>Come squat with us! A prize goes to the best squat, and the best costume wins bragging rights.</p>
+      </div>
+      <a href="#contact" class="btn">Find Us</a>
     </div>
   </section>
 
@@ -148,6 +163,41 @@
             <li><span>Drop In</span><b>$20<small>/class</small></b></li>
             <li><span>Unlimited Classes</span><b>$150<small>/month</small></b></li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="section">
+    <div class="wrap">
+      <p class="eyebrow">Schedule</p>
+      <h2>Class times</h2>
+      <p class="section-sub">Coached class times each week.</p>
+
+      <div class="schedule-groups">
+        <div class="schedule-group">
+          <h3>Adult Group Classes</h3>
+          <dl class="schedule-list">
+            <div>
+              <dt>Mon – Thu</dt>
+              <dd><span>9:00 AM</span><span>12:00 PM</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="schedule-group">
+          <h3>Athlete Training</h3>
+          <p class="card-meta">Kids &amp; Teens · Ages 7–18</p>
+          <dl class="schedule-list">
+            <div>
+              <dt>Mon – Thu</dt>
+              <dd><span>4:30 PM</span><span>5:30 PM</span><span>6:00 PM</span></dd>
+            </div>
+            <div>
+              <dt>Sunday</dt>
+              <dd><span>2:00 PM</span><span>3:30 PM</span></dd>
+            </div>
+          </dl>
         </div>
       </div>
     </div>
@@ -247,6 +297,8 @@
   const nav = document.querySelector('.nav');
   const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  // Squatober: show until 2 PM Central (CST) on Nov 7, 2026. Remove after the event.
+  if (Date.now() < Date.parse('2026-11-07T14:00:00-06:00')) document.getElementById('event').hidden = false;
 </script>
 </body>
 </html>
